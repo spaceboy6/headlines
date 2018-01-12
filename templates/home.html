@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Headlines</title>
+	</head>
+	<body>
+		<h1>Headlines</h1>
+		{% for article in articles %}
+		    {% if 'news.google.com' not in article.summary%}
+			<b><a href="{{ article.link }}">{{ article.title }}</a></b><br />
+		    {% endif %}
+			<i>{{ article.published }}</i><br />
+			<p>{{ article.summary|safe }}</p>
+			<hr />
+		{% endfor %}
+	</body>
+</html>
+
